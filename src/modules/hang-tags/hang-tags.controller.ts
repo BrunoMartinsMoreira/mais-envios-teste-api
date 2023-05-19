@@ -19,7 +19,9 @@ import { defaultErrorHandler } from 'src/commom/utils/defaultErrorHandler';
 import { HangTagQueuePublisher } from './hang-tag-queue.publisher';
 import { FindAllHangTagsDto } from './dto/find-all-hang-tags.dto';
 import { Like } from 'typeorm';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('/hang-tags')
 @Controller('hang-tags')
 export class HangTagsController {
   constructor(
