@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    container_name: maisenvios_db
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: "${DB_USERNAME}"
+      POSTGRES_PASSWORD: "${DB_PASSWORD}"
+      POSTGRES_DB: "${DB_NAME}"
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres-compose-network
+      
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672" 
+    networks:
+      - postgres-compose-network     
+
+networks:
+  postgres-compose-network:
+    driver: bridge
