@@ -39,3 +39,12 @@
 ## - Para acessar a documentação (swagger)
 
 - `http://localhost:3001/docs`
+
+## Rotas:
+
+- Upload da planilha: `POST: /hang-tags/upload`
+- Create (sem upload): `POST: /hang-tags`
+- Update: `PATCH: /hang-tags/:id`
+- Get All: `GET: /hang-tags`
+- Get One: `GET: /hang-tags/:id`
+- Delete: `DELETE: /hang-tags/:id`
